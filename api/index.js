@@ -6,7 +6,7 @@ const port = 3000;
 const app = express();
 app.use(cors());
 app.use(express.json());
-const path1 = "./weights.json";
+const path1 = path.resolve(__dirname, "weights.json")
 var weightData = JSON.parse(fs.readFileSync(path1, "utf-8"));
 
 app.get("/get_array", (req, res) => {
